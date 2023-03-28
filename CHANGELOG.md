@@ -6,3 +6,5 @@
     Creacion del Store y Slice de auth
     Add src/store/store.js
     Add src/store/auth/authSlice.js
+    Add Hooks folder and custom hooks useForm
+    Add thunks para los estados del auth
