@@ -10,3 +10,4 @@
     Add Hooks folder and custom hooks useForm
     Add thunks para los estados del auth
     Add firebase
+    Add google sign in
