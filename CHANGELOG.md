@@ -11,3 +11,4 @@
     Add thunks para los estados del auth
     Add firebase
     Add google sign in
+    Add state a los reduces de src/store/auth/authSlice.js
