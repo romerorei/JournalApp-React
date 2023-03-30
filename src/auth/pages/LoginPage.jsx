@@ -27,10 +27,10 @@ export const LoginPage = () => {
     console.log({ email, password })
   }
 
-     const onGoogleLogin = () => {
-      dispatch( startGoogleSignIn());
-      console.log('button google')
-     }
+  const onGoogleLogin = () => {
+  dispatch( startGoogleSignIn());
+  console.log('button google')
+  }
 
   // useEffect(() => {
   //   dispatch( checkingAuthentication() )

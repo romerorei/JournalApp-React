@@ -13,3 +13,4 @@
     Add google sign in
     Add state a los reduces de src/store/auth/authSlice.js
     Add disabled botton si el modal de GoogleLogin esta abierto
+    Manejo de estado del formulario register
