@@ -1,18 +1,26 @@
-import { Google } from "@mui/icons-material"
-import { Button, Grid, Link, TextField, Typography } from "@mui/material"
+import { useMemo } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Link as RouterLink } from "react-router-dom"
+import { Button, Grid, Link, TextField, Typography } from "@mui/material"
+import { Google } from "@mui/icons-material"
+
 import { AuthLayout } from "../layout/AuthLayout"
+
 import { useForm } from "../../hooks"
-import { useEffect } from "react"
 import { checkingAuthentication, startGoogleSignIn } from "../../store/auth";
-import { useDispatch } from "react-redux"
+
 
 export const LoginPage = () => {
 
+  const { status } = useSelector( state => state.auth )
+
+  const dispatch = useDispatch();
   const { email, password, onInputChange } = useForm({
     email: 'user@user.com',
     password: '123456'
   });
+
+  const isAuthenticating = useMemo( () => status === 'checking', [status]);
 
   const onSubmit = ( event ) => {
     event.preventDefault();
@@ -23,8 +31,6 @@ export const LoginPage = () => {
       dispatch( startGoogleSignIn());
       console.log('button google')
      }
-
-  const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch( checkingAuthentication() )
@@ -63,16 +69,17 @@ export const LoginPage = () => {
                 <Grid container spacing={ 2 } sx={{ mb: 2, mt: 1 }}>
                   <Grid item xs={ 12 } sm={ 6 }>
                     <Button
-                        type="submit"
-                        variant='contained'
-                        fullWidth
-                        onClick={ () => dispatch( checkingAuthentication() ) }
-                        >
+                      disabled={isAuthenticating}
+                      type="submit"
+                      variant='contained'
+                      fullWidth
+                      onClick={ () => dispatch( checkingAuthentication() ) }>
                       Login
                     </Button>
                   </Grid>
                   <Grid item xs={ 12 } sm={ 6 }>
                     <Button
+                        disabled={ isAuthenticating }
                         onClick={ onGoogleLogin }
                         variant='contained'
                         fullWidth>
