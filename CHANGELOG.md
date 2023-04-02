@@ -15,3 +15,4 @@
     Add disabled botton si el modal de GoogleLogin esta abierto
     Manejo de estado del formulario register
     Validaciones del formulario RegisterPage.jsx
+    Mostar errores en pantalla
