@@ -10,7 +10,7 @@ import { useEffect, useMemo, useState } from 'react'
     }, [ formState ])
 
     const isFormValid = useMemo( () => {
-        console.log(formValidation)
+       // console.log(formValidation)
 
         for (const formValue of Object.keys( formValidation )) {
             if ( formValidation[formValue] !== true ) return false;
@@ -43,7 +43,7 @@ import { useEffect, useMemo, useState } from 'react'
       }
 
       setFormValidation( formCheckedValues );
-      console.log(formCheckedValues)
+      //console.log(formCheckedValues)
     }
 
   return {

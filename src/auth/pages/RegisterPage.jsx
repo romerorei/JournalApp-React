@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button, Grid, Link, TextField, Typography } from "@mui/material"
+import { Button, Grid, Link, TextField, Typography, FormHelperText } from "@mui/material"
 import { Link as RouterLink } from "react-router-dom"
 import { AuthLayout } from "../layout/AuthLayout"
 import { useForm } from "../../hooks"
@@ -29,78 +29,81 @@ export const RegisterPage = () => {
   const onSubmit = ( event ) => {
     event.preventDefault();
     setFormSubmitted(true)
+
+    if (!isFormValid) return;
+
     console.log(formState);
   }
 
   return (
     <AuthLayout title="Sign in">
-          <form onSubmit={ onSubmit }>
-              <Grid container>
+      <form onSubmit={ onSubmit }>
+        <Grid container>
 
-              <Grid item xs={ 12 } sx={{ mt: 2 }}>
-                <TextField
-                  label="Name"
-                  type="text"
-                  placeholder='First Name'
-                  fullWidth
-                  name="displayName"
-                  value={ displayName }
-                  onChange={ onInputChange }
-                  error={ !!displayNameValid && formSubmitted}
-                  helperText={ displayNameValid }
-                />
-              </Grid>
+          <Grid item xs={ 12 } sx={{ mt: 2 }}>
+            <TextField
+              label="Name"
+              type="text"
+              placeholder='First Name'
+              fullWidth
+              name="displayName"
+              value={ displayName }
+              onChange={ onInputChange }
+              error={ !!displayNameValid && formSubmitted}
+              helperText={ displayNameValid }
+            />
+          </Grid>
 
-                <Grid item xs={ 12 } sx={{ mt: 2 }}>
-                  <TextField
-                    label="Correo"
-                    type="email"
-                    placeholder='correo@email.com'
-                    fullWidth
-                    name="email"
-                    value={ email }
-                    onChange={ onInputChange }
-                    error={ !!emailValid && formSubmitted }
-                    helperText={ emailValid }
-                  />
-                </Grid>
+          <Grid item xs={ 12 } sx={{ mt: 2 }}>
+            <TextField
+              label="Correo"
+              type="email"
+              placeholder='correo@email.com'
+              fullWidth
+              name="email"
+              value={ email }
+              onChange={ onInputChange }
+              error={ !!emailValid && formSubmitted }
+              helperText={ emailValid }
+            />
+          </Grid>
 
-                <Grid item xs={ 12 } sx={{ mt: 2 }}>
-                  <TextField
-                    label="Password"
-                    type="password"
-                    placeholder='password'
-                    fullWidth
-                    name="password"
-                    value={ password }
-                    onChange={ onInputChange }
-                    error={ !!passwordValid && formSubmitted }
-                    helperText={ passwordValid }
-                  />
-                </Grid>
+          <Grid item xs={ 12 } sx={{ mt: 2 }}>
+            <TextField
+              label="Password"
+              type="password"
+              placeholder='password'
+              fullWidth
+              name="password"
+              value={ password }
+              onChange={ onInputChange }
+              error={ !!passwordValid && formSubmitted }
+              helperText={ passwordValid }
+            />
+          </Grid>
 
-                <Grid container spacing={ 2 } sx={{ mb: 2, mt: 1 }}>
-                  <Grid item xs={ 12 } >
-                    <Button
-                      type='submit'
-                      variant='contained'
-                      fullWidth>
-                      Crear Cuenta
-                    </Button>
-                  </Grid>
-                </Grid>
+          <Grid container spacing={ 2 } sx={{ mb: 2, mt: 1 }}>
+            <Grid item xs={ 12 } >
+              <Button
+                type='submit'
+                variant='contained'
+                fullWidth>
+                Crear Cuenta
+              </Button>
+            </Grid>
+          </Grid>
 
-                <Grid container direction='row' justifyContent='end'>
-                  <Typography sx={{ mr: 0.5 }}>¿Ya tienes cuenta?</Typography>
-                  <Link component={ RouterLink } color='inherit' to="/auth/login">
-                    Inicia Sesion
-                  </Link>
+          <Grid container direction='row' justifyContent='end'>
+            <Typography sx={{ mr: 0.5 }}>¿Ya tienes cuenta?</Typography>
+            <Link component={ RouterLink } color='inherit' to="/auth/login">
+              Inicia Sesion
+            </Link>
 
-                </Grid>
+          </Grid>
 
-              </Grid>
-          </form>
+        </Grid>
+      </form>
 
-      </AuthLayout>
+    </AuthLayout>
   )
 }
