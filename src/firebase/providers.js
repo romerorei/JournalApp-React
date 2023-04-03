@@ -48,6 +48,11 @@ export const registerUserWithEmailPassword = async({ email, password, displayNam
     const resp = await createUserWithEmailAndPassword(FirebaseAuth, email, password );
     const { uid, photoURL } = resp.user;
     console.log(resp);
+    // TODO: actualizar el displayName en Firebase
+    return {
+      ok: true,
+      uid, photoURL, email, displayName
+    }
 
   } catch (error) {
     console.log(error);

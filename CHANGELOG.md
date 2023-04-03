@@ -16,4 +16,4 @@
     Manejo de estado del formulario register
     Validaciones del formulario RegisterPage.jsx
     Mostar errores en pantalla
-    Add registerUserWithEmailPassword register con user email y password
+    Add registerUserWithEmailPassword register con user email y password: se crean los usuarios en firebase
