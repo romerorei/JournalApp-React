@@ -1,6 +1,5 @@
 import { signInWithGoogle, registerUserWithEmailPassword } from "../../firebase/providers"
 import { checkingCredentials, login, logout } from "./authSlice"
-import { useDispatch } from 'react-redux';
 
 
 export const checkingAuthentication = ( email, password ) => {
@@ -31,10 +30,9 @@ export const startCreatingUserWithEmailPassword = ({ email, password, displayNam
 
       const result = await registerUserWithEmailPassword({ email, password, displayName });
       console.log(result)
-     // if ( !result.ok ) return dispatch( logout( result.errorMessage ) );
+     if ( !result.ok ) return dispatch( logout({ errorMessage: result.errorMessage }));
 
-
-      //dispatch( login( result ))
+      dispatch( login( result ))
 
   }
 
