@@ -19,3 +19,4 @@
     Add registerUserWithEmailPassword register con user email y password: se crean los usuarios en firebase
     Actualizar el displayName y autenticar el usuario
     Mostrar mensaje de error en la vista de registro de usuario
+    Realizar el login de usuario con correo y contraseña
