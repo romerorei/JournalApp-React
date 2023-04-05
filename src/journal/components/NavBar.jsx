@@ -3,7 +3,9 @@ import { LoginOutlined, MenuOutlined } from "@mui/icons-material"
 
 
 
+
 export const NavBar = ({ drawerWidth }) => {
+
   return (
     <AppBar
       position='fixed'

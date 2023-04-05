@@ -3,10 +3,7 @@ import { AuthRoutes } from '../auth/routes/AuthRoutes';
 
 import { JournalRoutes } from '../journal/routes/JournalRoutes';
 import { CheckingAuth } from '../ui/';
-import { useCheckAuth } from '../hooks/useCheckAuth ';
-
-
-
+import { useCheckAuth } from '../hooks';
 
 
 export const AppRouter = () => {
