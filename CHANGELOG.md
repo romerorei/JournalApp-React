@@ -20,4 +20,4 @@
     Actualizar el displayName y autenticar el usuario
     Mostrar mensaje de error en la vista de registro de usuario
     Realizar el login de usuario con correo y contraseña
-    Agrego el Loader: CheckingAuth src/ui/components/CheckingAuth.jsx
+    Agrego el Loader: CheckingAuth src/ui/components/CheckingAuth.jsx [class](https://www.udemy.com/course/react-cero-experto/learn/lecture/32298388#questions)
