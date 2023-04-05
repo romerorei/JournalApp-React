@@ -22,4 +22,5 @@
     Realizar el login de usuario con correo y contraseña
     Agrego el Loader: CheckingAuth src/ui/components/CheckingAuth.jsx [class](https://www.udemy.com/course/react-cero-experto/learn/lecture/32298388#questions)
     Manterner el estado de la autenticacion al recargar [class 290](https://www.udemy.com/course/react-cero-experto/learn/lecture/20428715#questions)
+    Custon hooks para la autenticacion [class 291](https://www.udemy.com/course/react-cero-experto/learn/lecture/32298508#questions)
 
