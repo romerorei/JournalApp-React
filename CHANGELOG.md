@@ -1,6 +1,6 @@
 - Se agrega el proyecto inicial MaterialUI, estructura y diseño
 
-# [19-redux-and-auth-with-firebase]
+## [19-redux-and-auth-with-firebase]
 - Se instala redux al proyecto:
 - yarn add @reduxjs/toolkit
 - yarn add react-redux
@@ -26,7 +26,7 @@
 - Logout de Firebase [292](https://www.udemy.com/course/react-cero-experto/learn/lecture/20120432#questions)
 
 
- # [20-redux-crud-on-firestore]
+ ## [20-redux-crud-on-firestore]
  - Se agrega el journalSlice, thunks de journal [298](https://www.udemy.com/course/react-cero-experto/learn/lecture/32310794#questions)
 
 
