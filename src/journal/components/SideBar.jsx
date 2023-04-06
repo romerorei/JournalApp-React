@@ -1,13 +1,15 @@
 import { useSelector } from 'react-redux';
-import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
+import { Avatar, Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
 import { TurnedInNot } from '@mui/icons-material';
 
 
 export const SideBar = ({ drawerWidth = 240 }) => {
 
     const { displayName, email, photoURL, status, uid } = useSelector( state => state.auth );
+    const namename = 'Pepe Grillo'
 
-  return (
+
+    return (
     <Box
         component='nav'
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -21,7 +23,11 @@ export const SideBar = ({ drawerWidth = 240 }) => {
             }}
         >
             <Toolbar>
-                <Typography variant='h6' noWrap component='div'>
+               { !!photoURL
+                ? <Avatar alt={ !!displayName ? displayName : 'No name' } src={photoURL} />
+                : <Avatar>{ `${displayName.split(' ')[0][0]}` }</Avatar>
+               }
+                <Typography variant='h6' noWrap component='div' sx={{ ml: 1 }}>
                     { !!displayName ? displayName : 'No name' }
                 </Typography>
             </Toolbar>
