@@ -29,5 +29,6 @@
  ## [20-redux-crud-on-firestore]
  - Se agrega el journalSlice, thunks de journal [298](https://www.udemy.com/course/react-cero-experto/learn/lecture/32310794#questions)
  - Preparar la base de datos Cloud Firestore [299](https://www.udemy.com/course/react-cero-experto/learn/lecture/32311346#questions)
+ - Crear una nueva nota [300](https://www.udemy.com/course/react-cero-experto/learn/lecture/20125334#questions)
 
 
