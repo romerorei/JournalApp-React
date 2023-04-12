@@ -1,5 +1,4 @@
 import { CircularProgress, IconButton, Typography } from '@mui/material';
-import {LoadingButton} from '@mui/lab';
 import { AddOutlined } from '@mui/icons-material';
 
 import { JournalLayout } from '../layout/JournalLayout';
