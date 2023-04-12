@@ -31,5 +31,6 @@
  - Preparar la base de datos Cloud Firestore [299](https://www.udemy.com/course/react-cero-experto/learn/lecture/32311346#questions)
  - Crear una nueva nota [300](https://www.udemy.com/course/react-cero-experto/learn/lecture/20125334#questions)
  - Activar la nota creada [301](https://www.udemy.com/course/react-cero-experto/learn/lecture/20125338#questions)
+ - Carga notas de FireStore [302](https://www.udemy.com/course/react-cero-experto/learn/lecture/20126428#questions)
 
 
