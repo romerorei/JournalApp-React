@@ -35,5 +35,6 @@
  - Mostrar las notes en el menu lateral [303](https://www.udemy.com/course/react-cero-experto/learn/lecture/20127394#questions)
  - Activar una nota [304](https://www.udemy.com/course/react-cero-experto/learn/lecture/20128022#questions)
  - Actrivar una nota para su edicion [305](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313914#questions)
+ - Actualizar la nota actual [305](https://www.udemy.com/course/react-cero-experto/learn/lecture/20143640#questions)
 
 
