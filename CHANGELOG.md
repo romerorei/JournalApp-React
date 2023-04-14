@@ -36,5 +36,4 @@
  - Activar una nota [304](https://www.udemy.com/course/react-cero-experto/learn/lecture/20128022#questions)
  - Actrivar una nota para su edicion [305](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313914#questions)
  - Actualizar la nota actual [305](https://www.udemy.com/course/react-cero-experto/learn/lecture/20143640#questions)
-
-
+ - Agregar SweetAlert 2 [308](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313546#questions)
