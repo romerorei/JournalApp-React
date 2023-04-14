@@ -9,6 +9,10 @@ import { useEffect, useMemo, useState } from 'react'
         createValidators();
     }, [ formState ])
 
+    useEffect(() => {
+      setFormState( initialForm );
+  }, [ initialForm ])
+
     const isFormValid = useMemo( () => {
        // console.log(formValidation)
 

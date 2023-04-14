@@ -33,5 +33,6 @@
  - Activar la nota creada [301](https://www.udemy.com/course/react-cero-experto/learn/lecture/20125338#questions)
  - Carga notas de FireStore [302](https://www.udemy.com/course/react-cero-experto/learn/lecture/20126428#questions)
  - Mostrar las notes en el menu lateral [303](https://www.udemy.com/course/react-cero-experto/learn/lecture/20127394#questions)
+ - Activar una nota [304](https://www.udemy.com/course/react-cero-experto/learn/lecture/20128022#questions)
 
 
