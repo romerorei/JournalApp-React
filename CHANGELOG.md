@@ -42,3 +42,4 @@
  - subir imagen a Cloudinary [311](https://www.udemy.com/course/react-cero-experto/learn/lecture/20146350#questions)
  - Multiples peticiones de forma simultanea [312](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313754#questions)
  - Mostrar las imagenes cargadas [313](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313830#questions)
+ - Limpiar notas al cerra sesion [315](https://www.udemy.com/course/react-cero-experto/learn/lecture/32349356#questions)
