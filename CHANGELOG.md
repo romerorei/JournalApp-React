@@ -37,3 +37,5 @@
  - Actrivar una nota para su edicion [305](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313914#questions)
  - Actualizar la nota actual [305](https://www.udemy.com/course/react-cero-experto/learn/lecture/20143640#questions)
  - Agregar SweetAlert 2 [308](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313546#questions)
+ - Cloudinary | Backend para subir imagenes [309](https://www.udemy.com/course/react-cero-experto/learn/lecture/20145306#questions)
+ - Seleccionar archivos desde React [310](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313692#questions)

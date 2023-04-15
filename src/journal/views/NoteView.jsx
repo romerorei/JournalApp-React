@@ -1,14 +1,15 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef  } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { SaveOutlined, ShoppingCartRounded } from "@mui/icons-material"
-import { Button, Divider, Grid, TextField, Typography } from "@mui/material"
+import { SaveOutlined, ShoppingCartRounded, UploadFileOutlined, UploadOutlined } from "@mui/icons-material"
+import { Button, Divider, Grid, IconButton, TextField, Typography } from "@mui/material"
 import Swal from "sweetalert2";
 import 'sweetalert2/dist/sweetalert2.css';
 
 import { useForm } from "../../hooks/useForm";
 import { ImageGallery } from "../components"
-import { setActiveNote, startSaveNotes } from "../../store/journal";
+import { setActiveNote, startSaveNotes, startUploadingFiles } from "../../store/journal";
+
 
 
 export const NoteView = () => {
@@ -24,6 +25,8 @@ export const NoteView = () => {
         return newDate
       }, [ date ] )
       //console.log(dateString)
+
+      const fileInputRef = useRef()
 
       useEffect(() => {
         distpatch( setActiveNote(formState) );
@@ -41,6 +44,12 @@ export const NoteView = () => {
           distpatch( startSaveNotes() );
       }
 
+      const onFileInputChange = ({ target }) => {
+        if( target.files === 0 ) return;
+
+        distpatch( startUploadingFiles( target.files ) );
+      }
+
 
   return (
     <>
@@ -50,6 +59,23 @@ export const NoteView = () => {
             <Typography fontSize={ 39 } fontWeight='light'>{ dateString }</Typography>
         </Grid>
         <Grid item>
+
+            <input
+                type="file"
+                multiple
+                ref={ fileInputRef }
+                onChange={ onFileInputChange }
+                style={{ display: 'none' }}
+            />
+
+            <IconButton
+                color="primary"
+                disabled={ isSaving }
+                onClick={ () => fileInputRef.current.click() }
+            >
+                <UploadOutlined sx={{ fontSize: 30 }} />
+            </IconButton>
+
             <Button onClick={onSaveNote} disabled={ isSaving } color="primary" variant="outlined" sx={{ padding: 1 }} >
                 <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
                 Guardar
