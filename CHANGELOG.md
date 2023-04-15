@@ -39,3 +39,4 @@
  - Agregar SweetAlert 2 [308](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313546#questions)
  - Cloudinary | Backend para subir imagenes [309](https://www.udemy.com/course/react-cero-experto/learn/lecture/20145306#questions)
  - Seleccionar archivos desde React [310](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313692#questions)
+ - subir imagen a Cloudinary [311](https://www.udemy.com/course/react-cero-experto/learn/lecture/20146350#questions)
