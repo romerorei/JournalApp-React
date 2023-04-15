@@ -32,6 +32,11 @@ export const SideBar = ({ drawerWidth = 240 }) => {
                 </Typography>
             </Toolbar>
             <Divider />
+            <Toolbar>
+                <Typography variant='span' noWrap component='span' sx={{ ml: 1 }}>
+                    { !!notes ? `Notas:${notes.length}` : 'No tienes notas' }
+                </Typography>
+            </Toolbar>
 
             <List>
                 {

@@ -1,8 +1,9 @@
-import { TurnedInNot } from "@mui/icons-material"
-import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
+import { Clear, TurnedInNot, Description } from "@mui/icons-material"
+import { Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
 import { useMemo } from "react"
 import { useDispatch } from 'react-redux'
 import { setActiveNote } from "../../store/journal/journalSlice"
+import { startDeletingNoteFromSideBar } from "../../store/journal"
 
 
 export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
@@ -12,6 +13,10 @@ export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
   const onClickNote = () => {
       dispatch( setActiveNote({ title, body, id, date, imageUrls }) )
   }
+
+  const onClickDeleteIcon = () => {
+    dispatch( startDeletingNoteFromSideBar(id) );
+}
 
   const newTitle = useMemo( () => {
     return title.length > 17
@@ -27,9 +32,12 @@ export const SideBarItem = ({ title = '', body, id, date, imageUrls = [] }) => {
 
   return (
     <ListItem disablePadding>
+      <IconButton onClick={ onClickDeleteIcon } color="primary" aria-label="upload picture" component="label">
+        <Clear />
+      </IconButton>
       <ListItemButton onClick={ onClickNote }>
           <ListItemIcon>
-              <TurnedInNot />
+              <Description />
           </ListItemIcon>
           <Grid container>
               <ListItemText primary={ newTitle } />

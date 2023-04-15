@@ -1,6 +1,6 @@
-import { collection, doc, setDoc } from "firebase/firestore/lite";
+import { collection, deleteDoc, doc, setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
-import { addNewEmptyNote, savingNewNote, setActiveNote, setNotes, setPhotosToActiveNote, setSaving, updateNotes } from "./journalSlice";
+import { addNewEmptyNote, deleteNoteById, savingNewNote, setActiveNote, setNotes, setPhotosToActiveNote, setSaving, updateNotes } from "./journalSlice";
 import { loadNotes, fileUpload } from "../../helpers";
 
 export const startNewNote = () => {
@@ -8,12 +8,13 @@ export const startNewNote = () => {
 
     dispatch( savingNewNote() );
 
-    console.log(getState());
+    //console.log(getState());
     const { uid } = getState().auth;
 
     const newNote = {
         title: '',
         body: '',
+        imageUrls: [],
         date: new Date().getTime(),
     }
 
@@ -76,6 +77,43 @@ export const startUploadingFiles = ( files = []) => {
     console.log( photosUrls )
 
     dispatch( setPhotosToActiveNote( photosUrls ) );
+
+  }
+}
+
+export const startDeletingNote = () => {
+  return async( dispatch, getState ) => {
+    dispatch( setSaving() );
+
+    const { uid } = getState().auth;
+    const { active:note } = getState().journal;
+
+    const docRef = doc( FirebaseDB, `${ uid }/journal/notes/${ note.id }`);
+    await deleteDoc( docRef );
+
+    dispatch( deleteNoteById(note.id) );
+    // Como alternativa con algunos ajustes en el slice
+    // const notes = await loadNotes( uid );
+    // dispatch( deleteNoteById( notes ) );
+
+  }
+}
+
+export const startDeletingNoteFromSideBar = (id) => {
+  return async( dispatch, getState ) => {
+    //dispatch( setSaving() );
+
+    const { uid } = getState().auth;
+    const { note } = getState().journal;
+    console.log(id)
+
+    const docRef = doc( FirebaseDB, `${ uid }/journal/notes/${ id }`);
+    await deleteDoc( docRef );
+
+    dispatch( deleteNoteById(id) );
+    // Como alternativa con algunos ajustes en el slice
+    // const notes = await loadNotes( uid );
+    // dispatch( deleteNoteById( notes ) );
 
   }
 }

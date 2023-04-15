@@ -45,11 +45,18 @@ export const journalSlice = createSlice({
       clearNotesLogout: (state) => {
         state.isSaving = false;
         state.messageSaved = '';
-        state.notes = [];
         state.active = null;
       },
       deleteNoteById: (state,  action ) => {
-
+        state.isSaving = false;
+        state.active = ( action.payload !==  state.active?.id ? state.active : null )
+        state.notes = state.notes.filter( note => note.id !== action.payload ); // esto es posible por RTK
+        // abajo seria si no estuvieramos usando RTK
+        // return {
+        //   ...state,
+        //   active: null,
+        //   notes: state.notes.filter( note => note.id !== action.payload )
+        // }
       },
    }
 });

@@ -1,4 +1,5 @@
 import { signInWithGoogle, registerUserWithEmailPassword, LoginWithEmailPassword, logoutFirebase } from "../../firebase/providers"
+import { clearNotesLogout } from "../journal"
 import { checkingCredentials, login, logout } from "./authSlice"
 
 

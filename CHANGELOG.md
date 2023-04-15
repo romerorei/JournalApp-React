@@ -43,3 +43,4 @@
  - Multiples peticiones de forma simultanea [312](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313754#questions)
  - Mostrar las imagenes cargadas [313](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313830#questions)
  - Limpiar notas al cerra sesion [315](https://www.udemy.com/course/react-cero-experto/learn/lecture/32349356#questions)
+ - Borrar una nota [316](https://www.udemy.com/course/react-cero-experto/learn/lecture/20147484#questions)
