@@ -1,6 +1,6 @@
 import { collection, doc, setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
-import { addNewEmptyNote, savingNewNote, setActiveNote, setNotes, setSaving, updateNotes } from "./journalSlice";
+import { addNewEmptyNote, savingNewNote, setActiveNote, setNotes, setPhotosToActiveNote, setSaving, updateNotes } from "./journalSlice";
 import { loadNotes, fileUpload } from "../../helpers";
 
 export const startNewNote = () => {
@@ -65,18 +65,17 @@ export const startUploadingFiles = ( files = []) => {
   return async( dispatch ) => {
     dispatch( setSaving() );
 
-    await fileUpload( files[0] );
+    // await fileUpload( files[0] );
+    const fileUploadPromises = [];
+    for ( const file of files ) {
+      fileUploadPromises.push( fileUpload( file ) )
+    }
+    console.log(fileUploadPromises)
 
-    // const { uid } = getState().auth;
-    // const { active:note } = getState().journal;
+    const photosUrls = await Promise.all( fileUploadPromises );
+    console.log( photosUrls )
 
-    // const noteToFireStore = { ...note };
-    // delete noteToFireStore.id // propiedad de js para elimiar una llave de un objecto
-    // //console.log(noteToFireStore)
-    // const docRef = doc( FirebaseDB, `${ uid }/journal/notes/${ note.id }`);
-    // await setDoc( docRef, noteToFireStore, { merge: true } );
-
-    // dispatch( updateNotes(note) );
+    dispatch( setPhotosToActiveNote( photosUrls ) );
 
   }
 }

@@ -15,11 +15,11 @@ export const fileUpload = async( file ) => {
     body: formdata,
     redirect: 'follow' })
 
-    console.log(resp);
+    //console.log(resp);
     if ( !resp.ok ) throw new Error('No se pudp subir la imagen:')
 
     const cloudResp = await resp.json();
-    console.log({ cloudResp })
+    //console.log({ cloudResp })
 
     return cloudResp.secure_url;
 

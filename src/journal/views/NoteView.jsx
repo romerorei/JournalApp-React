@@ -11,11 +11,10 @@ import { ImageGallery } from "../components"
 import { setActiveNote, startSaveNotes, startUploadingFiles } from "../../store/journal";
 
 
-
 export const NoteView = () => {
 
     const distpatch = useDispatch();
-    const { active:note, messageSaved, isSaving } = useSelector( state => state.journal );
+    const { active:note, messageSaved, isSaving, imageUrls } = useSelector( state => state.journal );
 
     const { body, title, date, id, onInputChange, formState } = useForm( note )
     //console.log(title)
@@ -33,7 +32,6 @@ export const NoteView = () => {
       }, [formState])
 
       useEffect(() => {
-        console.log(messageSaved)
         if ( messageSaved.length > 0 ) {
             Swal.fire('Nota actualizada', messageSaved, 'success');
         }
@@ -108,7 +106,7 @@ export const NoteView = () => {
             />
         </Grid>
 
-        <ImageGallery />
+        <ImageGallery itemData={ note.imageUrls } />
 
 
     </Grid>

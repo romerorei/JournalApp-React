@@ -40,3 +40,5 @@
  - Cloudinary | Backend para subir imagenes [309](https://www.udemy.com/course/react-cero-experto/learn/lecture/20145306#questions)
  - Seleccionar archivos desde React [310](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313692#questions)
  - subir imagen a Cloudinary [311](https://www.udemy.com/course/react-cero-experto/learn/lecture/20146350#questions)
+ - Multiples peticiones de forma simultanea [312](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313754#questions)
+ - Mostrar las imagenes cargadas [313](https://www.udemy.com/course/react-cero-experto/learn/lecture/32313830#questions)
