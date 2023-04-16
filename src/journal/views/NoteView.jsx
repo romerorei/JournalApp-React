@@ -62,6 +62,10 @@ export const NoteView = () => {
         </Grid>
         <Grid item>
 
+            <Typography variant='sub' noWrap component='sub' sx={{ ml: 1 }}>
+               ID: { note.id }
+            </Typography>
+
             <input
                 type="file"
                 multiple
