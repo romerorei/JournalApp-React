@@ -31,7 +31,7 @@ export const LoginPage = () => {
 
   const onGoogleLogin = () => {
   dispatch( startGoogleSignIn());
-  console.log('button google')
+  //console.log('button google')
   }
 
   // useEffect(() => {

@@ -24,7 +24,7 @@ export const signInWithGoogle = async() => {
     const errorMessage = error.message;
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log(credential)
+    // console.log(credential)
     console.log(error)
 
     return {

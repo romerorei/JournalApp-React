@@ -20,7 +20,7 @@ export const startNewNote = () => {
 
     const newDoc = doc( collection( FirebaseDB, `${ uid }/journal/notes`) );
     const setDocResp = await setDoc( newDoc, newNote );
-    console.log({newDoc, setDocResp} );
+    // console.log({newDoc, setDocResp} );
     newNote.id = newDoc.id;
 
     //! dispatch
@@ -71,10 +71,10 @@ export const startUploadingFiles = ( files = []) => {
     for ( const file of files ) {
       fileUploadPromises.push( fileUpload( file ) )
     }
-    console.log(fileUploadPromises)
+    // console.log(fileUploadPromises)
 
     const photosUrls = await Promise.all( fileUploadPromises );
-    console.log( photosUrls )
+    // console.log( photosUrls )
 
     dispatch( setPhotosToActiveNote( photosUrls ) );
 
@@ -105,7 +105,7 @@ export const startDeletingNoteFromSideBar = (id) => {
 
     const { uid } = getState().auth;
     const { note } = getState().journal;
-    console.log(id)
+    // console.log(id)
 
     const docRef = doc( FirebaseDB, `${ uid }/journal/notes/${ id }`);
     await deleteDoc( docRef );
